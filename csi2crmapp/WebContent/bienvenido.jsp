@@ -47,6 +47,7 @@ if (!ok)
   </div>
 </header>
 <section>
+	<article>
    <div class="col-md-6"">
    <h3>Consultar salarios por departamentos</h3>
   <div class="btn-toolbar" role="toolbar">
@@ -56,6 +57,29 @@ if (!ok)
    
    </div>
 </div>
+</article>
+<article>
+   <div class="col-md-6"">
+   <h3>Consultar salarios por paises</h3>
+  <div class="btn-toolbar" role="toolbar">
+  <a href="salarioPaises.jsp"><button type="button" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-star"></span> Ver datos
+  </button></a>
+   
+   </div>
+</div>
+</article>
+<article>
+   <div class="col-md-6"">
+   <h3>Consultar salarios por oficios</h3>
+  <div class="btn-toolbar" role="toolbar">
+  <a href="salarioTrabajo.jsp"><button type="button" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-star"></span> Ver datos
+  </button></a>
+   
+   </div>
+</div>
+</article>
 </section>
 
 <% } else { 

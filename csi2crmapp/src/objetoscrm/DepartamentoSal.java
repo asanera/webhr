@@ -3,18 +3,6 @@ package objetoscrm;
 public class DepartamentoSal {
 	private String departmentName;
 	private double salario;
-	public String getDepartmentName() {
-		return departmentName;
-	}
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
-	}
-	public double getSalario() {
-		return salario;
-	}
-	public void setSalario(double salario) {
-		this.salario = salario;
-	}
 	public DepartamentoSal(String departmentName, double salario) {
 		super();
 		this.departmentName = departmentName;
@@ -29,6 +17,18 @@ public class DepartamentoSal {
 			System.out.println("No se ha podido convertir en double");
 		}
 		
+	}
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+	public double getSalario() {
+		return salario;
+	}
+	public void setSalario(double salario) {
+		this.salario = salario;
 	}
 
 }
