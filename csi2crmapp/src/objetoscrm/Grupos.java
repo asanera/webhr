@@ -15,10 +15,12 @@ public class Grupos {
 
 	public Grupos(String idg, String idt, String etp) {
 		super();
-		int idtnum=0;
+		int idtnum = 0;
 		try {
-			idtnum=Integer.parseInt(idt);
-		} catch (Exception e) { idtnum=-1; }
+			idtnum = Integer.parseInt(idt);
+		} catch (Exception e) {
+			idtnum = -1;
+		}
 		this.idGrupo = idg;
 		this.idTutor = idtnum;
 		this.etapa = etp;
@@ -47,6 +49,5 @@ public class Grupos {
 	public void setetapa(String etapa) {
 		this.etapa = etapa;
 	}
-	
-}
 
+}
