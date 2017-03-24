@@ -30,6 +30,8 @@
 	href="./estilos/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript"
 	src="./estilos/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="./estilos/personalizado.css"></link>
 <title>Bienvenido</title>
 </head>
 <body>
@@ -108,6 +110,9 @@
 						</div>
 					</article>
 				</section>
+
+			</div>
+	
 				<%
 					} else {
 						//AHORA PONGO EL HTML DE SESION INCORRECTA
@@ -119,6 +124,6 @@
 					}
 				%>
 			
-	</div>
+
 </body>
 </html>

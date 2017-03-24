@@ -30,6 +30,8 @@
 	href="./estilos/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript"
 	src="./estilos/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="./estilos/personalizado.css"></link>
 <title>Directorios</title>
 </head>
 <body>
@@ -93,7 +95,7 @@
 					} else {
 						//AHORA PONGO EL HTML DE SESION INCORRECTA
 				%>
-				<div class="alert alert-danger">Error al iniciar sesión</div>
+				<div class="alert alert-danger"><strong>ERROR!</strong> Debes de iniciar sesión</div>
 				<a href="index.jsp">Volver</a>
 				<%
 					}

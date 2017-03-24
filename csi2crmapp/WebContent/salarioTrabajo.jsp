@@ -7,7 +7,7 @@
 try {
 	String aux=session.getAttribute("usuario").toString();
 } catch (Exception e) {
-	response.sendRedirect("cerrarsesion.jsp");
+	response.sendRedirect("directorio.jsp");
 }
 %>
 <!DOCTYPE html>
@@ -17,6 +17,8 @@ try {
 <title>Salario Trabajos</title>
 <link rel="stylesheet" type="text/css"
 	href="./estilos/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="./estilos/personalizado.css"></link>
 </head>
 <body>
 	<div class="container">

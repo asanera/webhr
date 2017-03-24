@@ -20,7 +20,7 @@ session.invalidate();
 		<h1>Iniciar Sesión</h1>
 		<div class="alert alert-success alert-dismissable">
  			 <button type="button" class="close" data-dismiss="alert">&times;</button>
-  			Esperamos volverte a ver pronto¡
+  			Esperamos volverte a ver pronto!
 		</div>
 		<form action="bienvenido.jsp" method="post" name="iniciosesion">
 			<input type="text" name="usuario" class="inputgris"
