@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="mipk.beanDB"%>
+<%@page import="objetoscrm.*"%>
+<%@page import="java.util.ArrayList"%>
+
 
 <!DOCTYPE html>
 <%@page import="mipk.Sesionok"%><html>
@@ -29,6 +33,8 @@
 <link rel="stylesheet" type="text/css"
 	href="./estilos/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript"
+	src="./js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript"
 	src="./estilos/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="./estilos/personalizado.css"></link>
@@ -56,19 +62,41 @@
 						</div>
 				</header>
 				<section>
-
+					<%
+						String query = "SELECT DEPARTMENT_NAME FROM DEPARTMENTS";
+							beanDB basededatos = new beanDB();
+							String[][] tablares = basededatos.resConsultaSelectA3(query);
+							ArrayList<String> listaDepartamentos = new ArrayList<String>();
+							for (int i = 0; i < tablares.length; i++) {
+								listaDepartamentos.add(tablares[i][0]);
+							}
+					%>
 					<article>
 						<div class="col-md-6"">
 							<div class="panel panel-primary">
 								<div class="panel-heading">
 									<h3>Consultar salarios por departamentos</h3>
 								</div>
-								<div class="panel-body">
-									<div class="btn-toolbar" role="toolbar">
-										<a href="salario.jsp"><button type="button"
-												class="btn btn-default btn-lg">
-												<span class="glyphicon glyphicon-info-sign"></span> Ver datos
-											</button></a>
+								<div class="row">
+
+									<div class="panel-body">
+										<div class="col-md-4">
+											<div class="btn-toolbar" role="toolbar">
+												<a href="salario.jsp"><button type="submit"
+														class="btn btn-default btn-lg">
+														<span class="glyphicon glyphicon-info-sign"></span> Ver
+														datos
+													</button></a>
+											</div>
+										</div>
+										<div class="col-md-5">
+											<select class="form-control" name="elegirDepartamento" id="elegirDepartamento">
+												<option>Todos</option>
+												<%for (int i = 0; i < listaDepartamentos.size(); i++) {%>
+												<option><%=listaDepartamentos.get(i)%></option>
+												<%}%>												
+											</select>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -84,7 +112,8 @@
 									<div class="btn-toolbar" role="toolbar">
 										<a href="salarioPaises.jsp"><button type="button"
 												class="btn btn-default btn-lg">
-												<span class="glyphicon glyphicon-info-sign"></span> Ver datos
+												<span class="glyphicon glyphicon-info-sign"></span> Ver
+												datos
 											</button></a>
 
 									</div>
@@ -102,7 +131,8 @@
 									<div class="btn-toolbar" role="toolbar">
 										<a href="salarioTrabajo.jsp"><button type="button"
 												class="btn btn-default btn-lg">
-												<span class="glyphicon glyphicon-info-sign"></span> Ver datos
+												<span class="glyphicon glyphicon-info-sign"></span> Ver
+												datos
 											</button></a>
 									</div>
 								</div>
@@ -110,20 +140,26 @@
 						</div>
 					</article>
 				</section>
+				</script>
+				<!-- Librería jQuery requerida por los plugins de JavaScript -->
+				<script src="http://code.jquery.com/jquery.js"></script>
+				<!-- Todos los plugins JavaScript de Bootstrap (también puedes
+         incluir archivos JavaScript individuales de los únicos
+         plugins que utilices) -->
+				<script src="./estilos/bootstrap/js/bootstrap.min.js"></script>
+	</div>
 
-			</div>
-	
-				<%
-					} else {
-						//AHORA PONGO EL HTML DE SESION INCORRECTA
-				%>
-				<script > 
-				location.href='loginError.jsp'; 
-				</script> 
-				<%
-					}
-				%>
-			
+	<%
+		} else {
+			//AHORA PONGO EL HTML DE SESION INCORRECTA
+	%>
+	<script>
+		location.href = 'loginError.jsp';
+	</script>
+	<%
+		}
+	%>
+
 
 </body>
 </html>

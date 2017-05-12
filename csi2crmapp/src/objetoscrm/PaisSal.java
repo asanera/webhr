@@ -14,7 +14,7 @@ public class PaisSal {
 			try {
 				this.salario = Double.parseDouble(salario);
 			} catch (Exception e) {
-				System.out.println("No se ha podido convertir en double");
+				System.out.println(e);
 			}
 			
 		}

@@ -20,4 +20,5 @@ public class JefeDepartamento extends JefeEquipo {
 	public void setOficina(String oficina) {
 		this.oficina = oficina;
 	}
+	
 }
