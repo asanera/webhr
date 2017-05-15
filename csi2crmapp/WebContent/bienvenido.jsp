@@ -78,19 +78,19 @@
 									<h3>Consultar salarios por departamentos</h3>
 								</div>
 								<div class="row">
-
+								<form name="selecionar" action="salario.jsp" method="get">
 									<div class="panel-body">
 										<div class="col-md-4">
 											<div class="btn-toolbar" role="toolbar">
-												<a href="salario.jsp"><button type="submit"
+												<button type="submit"
 														class="btn btn-default btn-lg">
 														<span class="glyphicon glyphicon-info-sign"></span> Ver
 														datos
-													</button></a>
+													</button>
 											</div>
 										</div>
 										<div class="col-md-5">
-											<select class="form-control" name="elegirDepartamento" id="elegirDepartamento">
+											<select class="form-control" name="elegirDepartamento" id="elegirDepartamento" >
 												<option>Todos</option>
 												<%for (int i = 0; i < listaDepartamentos.size(); i++) {%>
 												<option><%=listaDepartamentos.get(i)%></option>
@@ -98,6 +98,7 @@
 											</select>
 										</div>
 									</div>
+									</form>
 								</div>
 							</div>
 						</div>

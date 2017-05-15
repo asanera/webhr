@@ -39,11 +39,13 @@
 
 				<%
 					String departamento = request.getParameter("elegirDepartamento");
+					if (departamento==null) 
+						departamento="";
 				    String query;
-				    if(departamento.equals("Todo"))
+				    if(departamento.equals("Todos"))
 					query = "SELECT DEPARTMENT_NAME, SUM(SALARY) FROM EMPLOYEES e RIGHT JOIN DEPARTMENTS d ON (e.DEPARTMENT_ID = d.DEPARTMENT_ID) GROUP BY d.DEPARTMENT_ID";
 				    else
-				    query = "SELECT DEPARTMENT_NAME, SUM(SALARY) FROM EMPLOYEES e RIGHT JOIN DEPARTMENTS d ON (e.DEPARTMENT_ID = d.DEPARTMENT_ID) GROUP BY d.DEPARTMENT_ID";
+				    query = "SELECT DEPARTMENT_NAME, SUM(SALARY) FROM EMPLOYEES e RIGHT JOIN DEPARTMENTS d ON (e.DEPARTMENT_ID = d.DEPARTMENT_ID) WHERE DEPARTMENT_NAME ='"+departamento +"'  GROUP BY d.DEPARTMENT_ID";
 				    beanDB basededatos = new beanDB();
 					String[][] tablares = basededatos.resConsultaSelectA3(query);
 					ArrayList<DepartamentoSal> listaSalarios = new ArrayList<DepartamentoSal>();
