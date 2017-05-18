@@ -46,7 +46,7 @@
 				<li><a href="cerrarsesion.jsp">Salir</a></li>
 
 			</ul>
-			<nav>
+		</nav>
 				<header>
 					<div class="panel panel-default">
 						<div class="panel-body">

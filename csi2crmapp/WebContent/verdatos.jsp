@@ -13,7 +13,7 @@ try {
 <html>
 <head>
 </head>
-<body">
+<body>
 <h1><%=session.getAttribute("usuario") %>: Estos son los datos datos</h1>
 <hr/>
 <p><a href="bienvenido.jsp">Página principal</a></p>

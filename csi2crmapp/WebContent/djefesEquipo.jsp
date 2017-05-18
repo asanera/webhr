@@ -28,16 +28,17 @@
 				<li class="active"><a href="directorio.jsp">Directorios</a></li>
 				<li><a href="cerrarsesion.jsp">Salir</a></li>
 			</ul>
-			<nav>
-				<header>
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h1>Jefes de Equipos</h1>
-							
-						</div>
-				</header>
+		</nav>
+		<header>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Jefes de Equipos</h1>
 
-				<%
+				</div>
+			</div>
+		</header>
+
+		<%
 					String query = "SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEES	WHERE EMPLOYEE_ID IN (SELECT manager_id FROM EMPLOYEES)";
 					beanDB basededatos = new beanDB();
 					String[][] tablares = basededatos.resConsultaSelectA3(query);
@@ -46,25 +47,27 @@
 						listaJefes.add(new JefeEquipo(tablares[i][0], tablares[i][1]));
 					}
 				%>
-				<section>
-					<div class="table-responsive">
-						<table class="table table-bordered table-striped table-hover">
-							<tr>
-								<th>Nombre</th>
-								<th>Apellidos</th>
-							</tr>
-							<%
+		<section>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped table-hover">
+					<tr>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+					</tr>
+					<%
 								for (JefeEquipo j : listaJefes) { //g es una variable tipo grupo que va recorriendo la lista
 							%><tr>
-								<td><%=j.getNombre()%></td>
-								<td><%=j.getApellidos()%></td>
-							</tr>
-							<%
+						<td><%=j.getNombre()%></td>
+						<td><%=j.getApellidos()%></td>
+					</tr>
+					<%
 								}
 							%>
-						</table>
-					</div>
-				</section>
+				</table>
+
+			</div>
+
+		</section>
 	</div>
 </body>
 </html>

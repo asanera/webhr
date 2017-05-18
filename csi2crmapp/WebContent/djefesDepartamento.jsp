@@ -28,16 +28,16 @@
 				<li class="active"><a href="directorio.jsp">Directorios</a></li>
 				<li><a href="cerrarsesion.jsp">Salir</a></li>
 			</ul>
-			<nav>
-				<header>
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h1>Jefes de Departamentos y Oficinas</h1>
-							
-						</div>
-				</header>
+		</nav>
+		<header>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Jefes de Departamentos y Oficinas</h1>
 
-				<%
+				</div>
+		</header>
+
+		<%
 					String query = "SELECT FIRST_NAME, LAST_NAME, DEPARTMENT_NAME ,STREET_ADDRESS FROM EMPLOYEES E JOIN DEPARTMENTS D ON (D.MANAGER_ID = E.EMPLOYEE_ID) JOIN LOCATIONS L ON (D.LOCATION_ID = L.LOCATION_ID)";
 					beanDB basededatos = new beanDB();
 					String[][] tablares = basededatos.resConsultaSelectA3(query);
@@ -46,29 +46,29 @@
 						listaJefes.add(new JefeDepartamento(tablares[i][0], tablares[i][1],tablares[i][2],tablares[i][3]));
 					}
 				%>
-				<section>
-					<div class="table-responsive">
-						<table class="table table-bordered table-striped table-hover">
-							<tr>
-								<th>Nombre</th>
-								<th>Apellidos</th>
-								<th>Departamento</th>
-								<th>Oficinas</th>
-							</tr>
-							<%
+		<section>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped table-hover">
+					<tr>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>Departamento</th>
+						<th>Oficinas</th>
+					</tr>
+					<%
 								for (JefeDepartamento j : listaJefes) { //g es una variable tipo grupo que va recorriendo la lista
 							%><tr>
-								<td><%=j.getNombre()%></td>
-								<td><%=j.getApellidos()%></td>
-								<td><%=j.getDepartamento()%></td>
-								<td><%=j.getOficina()%></td>
-							</tr>
-							<%
+						<td><%=j.getNombre()%></td>
+						<td><%=j.getApellidos()%></td>
+						<td><%=j.getDepartamento()%></td>
+						<td><%=j.getOficina()%></td>
+					</tr>
+					<%
 								}
 							%>
-						</table>
-					</div>
-				</section>
+				</table>
+			</div>
+		</section>
 	</div>
 </body>
 </html>

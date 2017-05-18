@@ -49,10 +49,10 @@
 			<ul class="nav nav-pills">
 				<li class="active"><a href="bienvenido.jsp">Inicio</a></li>
 				<li><a href="directorio.jsp">Directorios</a></li>
-				<li><a href="cerrarsesion.jsp">Salir</a></li>
-
+				<li><a href="oficios.jsp">Oficios</a></li>
+				<li><a href="cerrarsesion.jsp">Salir</a></li>				
 			</ul>
-			<nav>
+		</nav>
 				<header>
 					<div class="panel panel-default">
 						<div class="panel-body">
