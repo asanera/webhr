@@ -26,6 +26,7 @@
 			<ul class="nav nav-pills">
 				<li><a href="bienvenido.jsp">Inicio</a></li>
 				<li class="active"><a href="directorio.jsp">Directorios</a></li>
+				<li><a href="oficios.jsp">Oficios</a></li>
 				<li><a href="cerrarsesion.jsp">Salir</a></li>
 			</ul>
 		</nav>

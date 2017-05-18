@@ -1,25 +1,22 @@
 package objetoscrm;
 
 public class Empleos {
-
+	private String id;
 	private String titulo;
-	private double sueldoMaximo;
-	private double sueldoMinimo;
+	private double sueldoMax;
+	private double sueldoMin;
 
-	public Oficios(String titulo, double sueldoMaximo double sueldoMinimo){
+	public Empleos(String id, String titulo, String sueldoMax, String sueldoMin) {
+		super();
+		this.id = id;
 		this.titulo = titulo;
-		try {
-			this.sueldoMaximo = sueldoMaximo;
-		} catch (Exception e) {
-			this.sueldoMaximo = Double.parseDouble(sueldoMaximo);
-		}
-		try {
-			this.sueldoMinimo = sueldoMinimo;
-		} catch (Exception e) {
-			this.sueldoMinimo = Double.parseDouble(sueldoMinimo);
-		}
+		this.sueldoMax = Double.parseDouble(sueldoMax);
+		this.sueldoMin = Double.parseDouble(sueldoMin);
 	}
 
+	public String getId() {
+		return id;
+	}
 	public String getTitulo() {
 		return titulo;
 	}
@@ -28,20 +25,21 @@ public class Empleos {
 		this.titulo = titulo;
 	}
 
-	public double getSueldoMaximo() {
-		return sueldoMaximo;
+	public double getSueldoMax() {
+		return sueldoMax;
 	}
 
-	public void setSueldoMaximo(double sueldoMaximo) {
-		this.sueldoMaximo = sueldoMaximo;
+	public void setSueldoMax(double sueldoMax) {
+		this.sueldoMax = sueldoMax;
 	}
 
-	public double getSueldoMinimo() {
-		return sueldoMinimo;
+	public double getSueldoMin() {
+		return sueldoMin;
 	}
 
-	public void setSueldoMinimo(double sueldoMinimo) {
-		this.sueldoMinimo = sueldoMinimo;
+	public void setSueldoMin(double sueldoMin) {
+		this.sueldoMin = sueldoMin;
 	}
+	
 
 }

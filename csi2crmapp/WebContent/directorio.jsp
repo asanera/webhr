@@ -43,64 +43,68 @@
 			<ul class="nav nav-pills">
 				<li><a href="bienvenido.jsp">Inicio</a></li>
 				<li class="active"><a href="directorio.jsp">Directorios</a></li>
+			    <li><a href="oficios.jsp">Oficios</a></li>
 				<li><a href="cerrarsesion.jsp">Salir</a></li>
 
 			</ul>
 		</nav>
-				<header>
-					<div class="panel panel-default">
+		<header>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Control de directorios</h1>
+				</div>
+			</div>
+		</header>
+		<section>
+
+			<article>
+				<div class="col-md-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3>Consultar Jefes de Equipo</h3>
+						</div>
 						<div class="panel-body">
-							<h1>Control de directorios</h1>
-						</div>
-				</header>
-				<section>
-
-					<article>
-						<div class="col-md-6"">
-							<div class="panel panel-success">
-								<div class="panel-heading">
-									<h3>Consultar Jefes de Equipo</h3>
-								</div>
-								<div class="panel-body">
-									<div class="btn-toolbar" role="toolbar">
-										<a href="djefesEquipo.jsp"><button type="button"
-												class="btn btn-default btn-lg">
-												<span class="glyphicon glyphicon-info-sign"></span> Ver datos
-											</button></a>
-									</div>
-								</div>
+							<div class="btn-toolbar" role="toolbar">
+								<a href="djefesEquipo.jsp"><button type="button"
+										class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-info-sign"></span> Ver datos
+									</button></a>
 							</div>
 						</div>
-					</article>
-					<article>
-						<div class="col-md-6"">
-							<div class="panel  panel-success">
-								<div class="panel-heading">
-									<h3>Consultar Jefes de Departamento y Oficina</h3>
-								</div>
-								<div class="panel-body">
-									<div class="btn-toolbar" role="toolbar">
-										<a href="djefesDepartamento.jsp"><button type="button"
-												class="btn btn-default btn-lg">
-												<span class="glyphicon glyphicon-info-sign"></span> Ver datos
-											</button></a>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div class="col-md-6">
+					<div class="panel  panel-success">
+						<div class="panel-heading">
+							<h3>Consultar Jefes de Departamento y Oficina</h3>
+						</div>
+						<div class="panel-body">
+							<div class="btn-toolbar" role="toolbar">
+								<a href="djefesDepartamento.jsp"><button type="button"
+										class="btn btn-default btn-lg">
+										<span class="glyphicon glyphicon-info-sign"></span> Ver datos
+									</button></a>
 
-									</div>
-								</div>
 							</div>
 						</div>
-					</article>
-				</section>
-				<%
+					</div>
+				</div>
+			</article>
+		</section>
+		<%
 					} else {
 						//AHORA PONGO EL HTML DE SESION INCORRECTA
 				%>
-				<div class="alert alert-danger"><strong>ERROR!</strong> Debes de iniciar sesión</div>
-				<a href="index.jsp">Volver</a>
-				<%
+		<div class="alert alert-danger">
+			<strong>ERROR!</strong> Debes de iniciar sesión
+		</div>
+		<a href="index.jsp">Volver</a>
+		<%
 					}
 				%>
-			
+
 	</div>
 </body>
 </html>
