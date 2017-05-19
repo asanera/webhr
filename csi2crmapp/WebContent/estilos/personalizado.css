@@ -1,3 +1,7 @@
 body{
 	background-color: #EFEFFB;
 }
+#tbOficios {
+    overflow:auto;
+    max-height: 400px;
+}

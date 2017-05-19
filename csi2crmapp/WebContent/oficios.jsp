@@ -19,8 +19,8 @@
 	if (titulo == null || sueldoMax == null || sueldoMin == null)
 		esCorrecto = false;
 	if (esCorrecto) {
-		String insert = "INSERT INTO JOBS (JOB_ID,JOB_TITLE, MIN_SALARY, MAX_SALARY) VALUES ('" +id +"','"
-				+ titulo + "','"+sueldoMin+"','"+sueldoMax+"')";
+		String insert = "INSERT INTO JOBS VALUES ('" + id + "','" + titulo + "','" + sueldoMin + "','"
+				+ sueldoMax + "')";
 		beanDB basededatos = new beanDB();
 		basededatos.insert(insert);
 	}
@@ -48,17 +48,18 @@
 		<header>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<h1>Inserta oficios</h1>
+					<h1>Insertar oficios</h1>
 				</div>
 			</div>
 		</header>
 		<div class="row">
 			<div class="col-md-5">
-				<form role="form" id="formOficios" name="oficios" action="oficios.jsp" method="get">
+				<form role="form" id="formOficios" name="oficios"
+					action="oficios.jsp" method="get">
 					<div class="form-group">
 						<label for="joid">Id</label> <input type="text"
 							class="form-control" id="joid" name="joid"
-							placeholder="Introduce el id" required>
+							placeholder="Introduzca la id" required>
 					</div>
 					<div class="form-group">
 						<label for="jobar">Titulo del oficio</label> <input type="text"
@@ -78,44 +79,40 @@
 					<button type="submit" class="btn btn-default">Enviar</button>
 				</form>
 			</div>
-		<%
-			String query = "SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY FROM JOBS";
-			beanDB basededatos = new beanDB();
-			String[][] tablares = basededatos.resConsultaSelectA3(query);
-			ArrayList<Empleos> listaOficios = new ArrayList<Empleos>();
-			for (int i = 0; i < tablares.length; i++) {
-				listaOficios.add(new Empleos(tablares[i][0],tablares[i][1],tablares[i][2],tablares[i][3]));
-			}
-		%>
+			<%
+				String query = "SELECT JOB_ID, JOB_TITLE, MIN_SALARY, MAX_SALARY FROM JOBS";
+				beanDB basededatos = new beanDB();
+				String[][] tablares = basededatos.resConsultaSelectA3(query);
+				ArrayList<Empleos> listaOficios = new ArrayList<Empleos>();
+				for (int i = 0; i < tablares.length; i++) {
+					listaOficios.add(new Empleos(tablares[i][0], tablares[i][1], tablares[i][2], tablares[i][3]));
+				}
+			%>
 			<div class="col-md-6">
-			
-			<div class="table-responsive">
-				<table class="table table-bordered table-striped table-hover">
-					<tr>
-						<th>Id</th>
-						<th>Titulo</th>
-						<th>Sueldo Maximo</th>
-						<th>Sueldo Minimo</th>
-					</tr>
-					<%
-						for (Empleos e : listaOficios) {
-					%><tr>
-						<td><%=e.getId()%></td>
-						<td><%=e.getTitulo()%></td>
-						<td><%=e.getSueldoMax()%></td>
-						<td><%=e.getSueldoMin()%></td>
-					</tr>
-					<%
-						}
-					%>
-				</table>
-			</div>
-			
-			</div>
 
-
+				<div class="table-responsive" id="tbOficios">
+					<table class="table table-bordered table-striped table-hover">
+						<tr>
+							<th>Id</th>
+							<th>Titulo</th>
+							<th>Sueldo Maximo</th>
+							<th>Sueldo Minimo</th>
+						</tr>
+						<%
+							for (Empleos e : listaOficios) {
+						%><tr>
+							<td><%=e.getId()%></td>
+							<td><%=e.getTitulo()%></td>
+							<td><%=e.getSueldoMax()%></td>
+							<td><%=e.getSueldoMin()%></td>
+						</tr>
+						<%
+							}
+						%>
+					</table>
+				</div>
+			</div>
 		</div>
-
 	</div>
 </body>
 </html>
